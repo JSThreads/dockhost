@@ -1,0 +1,28 @@
+version: '3'
+
+networks:
+  # configuring the default network of Traefik
+  default:
+    internal: false
+    name: reverse-proxy
+
+services:
+  traefik:
+    # The official v2 Traefik docker image
+    image: traefik:v2.6
+    # Enables the web UI and tells Traefik to listen to docker. Also, 
+    #  we don't want to expose containers per default.
+    command:
+      - --api.insecure=true
+      - --providers.docker
+      - --providers.docker.exposedByDefault=false
+    ports:
+      # The HTTP port
+      - "5500:80"
+      # The Web UI (enabled by --api.insecure=true)
+      - "8080:8080"
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - traefik.http.routers.traefik.rule=Host(`gitproject.ch`)
