@@ -29,19 +29,6 @@ entryPoints:
   websecure:
     address: ":443" # [host]:port[/tcp|/udp]
     # Https certificates
-    http:
-      tls:
-        options: foobar
-        certResolver: leresolver
-        domains:
-          - main: example.com
-            sans:
-              - foo.example.com
-              - bar.example.com
-          - main: test.com
-            sans:
-              - foo.test.com
-              - bar.test.com
 
 providers:
   # Enable the file provider to define routers / middlewares / services in file
@@ -71,4 +58,11 @@ http:
         servers:
         - url: "http://<private-ip-server-1>:<private-port-server-1>/"
         - url: "http://<private-ip-server-2>:<private-port-server-2>/"
+        
+tls:
+  certificates:
+    - certFile: /path/to/domain.cert
+      keyFile: /path/to/domain.key
+    - certFile: /path/to/other-domain.cert
+      keyFile: /path/to/other-domain.key
 ```
