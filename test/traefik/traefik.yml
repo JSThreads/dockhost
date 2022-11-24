@@ -1,0 +1,40 @@
+## STATIC CONFIG (restart traefik to update)
+
+api:
+  insecure: true
+  dashboard: true
+
+providers:
+  docker:
+    exposedByDefault: false
+    watch: true
+  file:
+    fileName: /etc/traefik/traefik.yml
+    watch: true
+
+# listen on 80/443, and redirect all 80 to 443 via 301
+entryPoints:
+  web:
+    address: :80
+    #http:
+    #  redirections:
+    #    entryPoint:
+    #      to: websecure
+    #      scheme: https
+    #      permanent: true
+  websecure:
+    address: :443
+
+
+## DYNAMIC CONFIG
+
+http:
+  routers:
+    whoami:
+      # By default, routers listen to every entry points
+      rule: "Host(`localhost`)"
+
+#tls:
+#  certificates:
+#    - certFile: /certs/bret.lol.crt
+#      keyFile: /certs/bret.lol.key
