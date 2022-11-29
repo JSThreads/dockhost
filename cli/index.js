@@ -12,6 +12,9 @@ const commands = {
     start: (args) => {
         exec("docker-compose -f ./docker-compose.yml up -d");
     },
+    stop: (args) => {
+        exec("docker-compose -f ./docker-compose.yml down");
+    },
     restart: (args) => {
         exec("docker-compose -f ./docker-compose.yml restart");
     },
@@ -25,7 +28,7 @@ gradient.pastel('\b╠═══════════════════�
 gradient.pastel('\b╠═════════════════════════════════════════════╬══════════════════════════════════════╣\n'),
 `\b${gradient('#74ebd5', '#74ebd5')('║')} restart                                     ${gradient('#eb748a', '#eb748a')('║')} Restart Dockhost                     ${gradient('#74ebd5', '#74ebd5')('║')}\n`,  
 gradient.pastel('\b╠═════════════════════════════════════════════╬══════════════════════════════════════╣\n'),
-`\b${gradient('#74ebd5', '#74ebd5')('║')} <command> --help                            ${gradient('#eb748a', '#eb748a')('║')} Get command's help                   ${gradient('#74ebd5', '#74ebd5')('║')}\n`,  
+`\b${gradient('#74ebd5', '#74ebd5')('║')} stop                                        ${gradient('#eb748a', '#eb748a')('║')} Stop Dockhost                        ${gradient('#74ebd5', '#74ebd5')('║')}\n`,  
 gradient.pastel('\b╠═════════════════════════════════════════════╬══════════════════════════════════════╣\n'),
 `\b${gradient('#74ebd5', '#74ebd5')('║')} add-service <config-file>                   ${gradient('#eb748a', '#eb748a')('║')} Add a server based on config file    ${gradient('#74ebd5', '#74ebd5')('║')}\n`, 
 gradient.pastel('\b╠═════════════════════════════════════════════╬══════════════════════════════════════╣\n'),
