@@ -1,11 +1,7 @@
 # dockhost
 VirtualHost powered by Docker
 
-Traefik
-
-- [x] Routing
-- [x] Middlewares
-- [ ] HTTPS
+Translate Traefik to Nginx proxy and write plugins
 
 CLI 
 
