@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dockhost dashboard</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css ">
+</head>
+<body>
+    <div id="layout">
+        <nav>
+            <div>
+                <h1>Dockhost dashboard</h1>
+                <div>
+                    <span id="api">localhost:10000/api</span>
+                    <span id="copyapi" class="material-symbols-outlined" onclick="bloob(event)">content_copy</span>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <nav>
+                <h2>Domains</h2>
+                <div><span id="active-tab">localhost</span><span>local.gitproject.ch</span><span>gitproject.ch</span><span>apache.gitproject.ch</span><span>nginx.gitproject.ch</span><span>whoami.gitproject.ch</span><span>www.gitproject.ch</span><span>l1nginx.gitproject.ch</span><span>l1apache.gitproject.ch</span><span class="material-symbols-outlined" id="add">add</span></div>
+            </nav>
+            <div>
+                <div>
+                    <h3>Servers</h3>
+                    <span class="select">Add a server <span class="material-symbols-outlined">expand_more</span></span>
+                </div>
+                <div>
+                    <h3>Middlewares</h3>
+                    <span class="select">Add a middleware <span class="material-symbols-outlined">expand_more</span></span>
+                    <div id="middlewares">
+                        <div>
+                            <div>
+                                <h4>SSL</h4>
+                                <div id="auto-generated">
+                                    <span>Auto-generated certificate</span>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div id="file-input">
+                                    <h5>Select your files</h5>
+                                    <div>
+                                        <div>
+                                            <input type="file">
+                                            <div></div>
+                                        </div>
+                                        <div>
+                                            <input type="file">
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="nginx">
+        Powered by Nginx
+    </div>
+</body>
+</html>
