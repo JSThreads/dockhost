@@ -35,10 +35,9 @@
                 </div>
                 <div>
                     <h3>Middlewares</h3>
-                    <span class="select">Add a middleware <span class="material-symbols-outlined">expand_more</span></span>
                     <div id="middlewares">
                         <div>
-                            <div>
+                            <div id="ssl">
                                 <h4>SSL</h4>
                                 <div id="auto-generated">
                                     <span>Auto-generated certificate</span>
@@ -52,18 +51,48 @@
                                     <div>
                                         <div>
                                             <input type="file">
-                                            <div></div>
+                                            <div>CERTIFICATE<div>any file selected..</div></div>
                                         </div>
                                         <div>
                                             <input type="file">
-                                            <div></div>
+                                            <div>KEY<div>any file selected..</div></div>
                                         </div>
                                     </div>
                                 </div>
+                                <div id="redirection">
+                                    <h5>Redirect to HTTPS</h5>
+                                    <p>Do you want to redirect your HTTP request to HTTPS ?</p>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
                             </div>
-                            <div></div>
+                            <div id="authentication">
+                                <h4>Authentication</h4>
+                                <div id="authentication-on">
+                                    <span>Do you want to use the authentication?</span>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <h5>Users</h5>
+                                </div>
+                            </div>
+                            <div id="access">
+                                <h4>Limit access</h4>
+                            </div>
+                            <div id="language">
+                                <h4>Geographic redirection</h4>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div>
+                    <h3>Docker</h3>
+                    <span class="select">Choose environement <span class="material-symbols-outlined">expand_more</span></span>
                 </div>
             </div>
         </main>
