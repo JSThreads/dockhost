@@ -69,10 +69,10 @@ body { margin: 0px; background: rgb(250, 250, 250); font-family: 'Zen Dots', cur
     top: calc(50% + 15px);
     transform: translateY(-50%);
     width: calc(100% - 200px);
-    height: 60px;
+    height: 65px;
 }
 #layout main nav div::-webkit-scrollbar, #middlewares::-webkit-scrollbar {
-    height: 5px;
+    height: 8px;
 }
 #layout main nav div::-webkit-scrollbar-thumb, #middlewares::-webkit-scrollbar-thumb {
     background: #dfdfdf;
@@ -125,8 +125,8 @@ main h3 {
 }
 
 #middlewares {
-    margin-top: 45px;
-    height: 600px;
+    margin-top: -15px;
+    height: 650px;
     overflow: auto;
     display: flex;
     gap: 200px;
@@ -135,17 +135,47 @@ main h3 {
 #middlewares > div {
     position: absolute;
     display: flex;
-    gap: 30px;
+    margin-top: 30px;
+    gap: 40px;
 }
 #middlewares > div > div {
+    position: relative;
     width: 375px;
     border: 2px solid #dfdfdf;
     border-radius: 10px;
     height: 530px;
     padding: 30px;
 }
+#middlewares > div > div::before {
+    position: absolute;
+    color: rgb(250, 250, 250);
+    border-radius: 13px;
+    top: 0px;
+    transform: translateY(-50%);
+    right: -20px;
+    padding: 10px;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
 #middlewares > div > div h4 {
     margin-top: 5px;
+    margin-bottom: 20px;
     font-size: 24px;
 }
 #middlewares > div > div > #auto-generated {
@@ -157,11 +187,69 @@ main h3 {
 #middlewares > div > div > #auto-generated > span {
     margin-left: 30px;
 }
-#middlewares > div > div > #file-input h5 {
+#middlewares h5, #authentication h5 {
     font-size: 18px;
+    margin-bottom: 25px;
 }
-#middlewares > div > div > #file-input h5 {
-    font-size: 18px;
+#middlewares > div > div > #redirection p {
+    font-size: 13px;
+}
+#middlewares > div > div > #file-input > div > div {
+    width: calc(100% - 10px);
+    height: 90px;
+    border: 2px solid #11a02b;
+    border-radius: 17px;
+    margin-bottom: 20px;
+    position: relative;
+}
+#middlewares > div > div > #file-input > div > div > div {
+    position: absolute;
+    opacity: 0.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#middlewares > div > div > #file-input > div > div > div > div {
+    font-size: 10px;
+    margin-top: 5px;
+}
+#middlewares > div > div > #file-input input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#authentication #authentication-on {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+#authentication #authentication-on > span {
+    width: calc(100% - 130px);
+}
+
+#ssl::before {
+    background: rgb(101, 229, 120);
+    content: "lock";
+}
+#authentication::before {
+    background: rgb(101, 184, 229);
+    content: "verified_user";
+}
+#access::before {
+    background: rgb(229, 199, 101);
+    content: "public";
+}
+#language::before {
+    background: rgb(195, 101, 229);
+    content: "language";
 }
 
 #nginx {
