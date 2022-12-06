@@ -26,17 +26,17 @@
         <main>
             <nav>
                 <h2>Domains</h2>
-                <div><span id="active-tab">localhost</span><span>local.gitproject.ch</span><span>gitproject.ch</span><span>apache.gitproject.ch</span><span>nginx.gitproject.ch</span><span>whoami.gitproject.ch</span><span>www.gitproject.ch</span><span>l1nginx.gitproject.ch</span><span>l1apache.gitproject.ch</span><span class="material-symbols-outlined" id="add">add</span></div>
+                <div><span id="active-tab">localhost</span><span>local.gitproject.ch</span><span>gitproject.ch</span><span>apache.gitproject.ch</span><span>nginx.gitproject.ch</span><span>whoami.gitproject.ch</span><span>www.gitproject.ch</span><span class="material-symbols-outlined" id="add" onclick="smallBloob(event)">add</span></div>
             </nav>
-            <div>
-                <div>
+            <div id="main-layout">
+                <section>
                     <h3>Servers</h3>
                     <span class="select">Add a server <span class="material-symbols-outlined">expand_more</span></span>
-                </div>
-                <div>
+                </section>
+                <section>
                     <h3>Middlewares</h3>
                     <div id="middlewares">
-                        <div>
+                        <div id="middlewares-layout">
                             <div id="ssl">
                                 <h4>SSL</h4>
                                 <div id="auto-generated">
@@ -78,22 +78,105 @@
                                     </label>
                                 </div>
                                 <div>
-                                    <h5>Users</h5>
+                                    <div id="user-input">
+                                        <h5>Add a users</h5>
+                                        <span><span>Path</span><input spellcheck="false" type="text" id="path-input"></span>
+                                        <span><span>Username</span><input spellcheck="false" type="text" id="username-input"></span>
+                                        <span><span>Password</span><input spellcheck="false" type="password" id="password-input"></span>
+                                        <button onclick="smallBloob(event)">Add</button>
+                                    </div>
+                                    <div id="user-management">
+                                        <h5>Users management</h5>
+                                        <div>
+                                            <div>
+                                                <div><span>Admin<span>/</span></span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                                <div><span>TestUser<span>/test</span></span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                                <div><span>Client<span>/client</span></span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                                <div><span>OtherUser<span>/client</span></span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                                <div><span>AsManyAsYouWant<span>/</span></span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                                <div><span>Tymon<span>/tymon</span></span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                                <div><span>Student<span>/</span></span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div id="access">
                                 <h4>Limit access</h4>
+                                <p>To access documentation to use it with the dockhost API, click <a>here</a>!</p>
+                                <div id="ban-by-ip">
+                                    <h5>Ban by IP</h5>
+                                    <div><span>IP</span><span><input type="text"><button onclick="smallBloob(event)">Ban</button></span></div>
+                                    <div id="ban-by-ip-management">
+                                        <div>
+                                            <div><span>192.168.34.9/24</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                            <div><span>127.0.0.1</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                            <div><span>157.19.0.4</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                            <div><span>192.168.34.9/24</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                            <div><span>127.0.0.1</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                            <div><span>157.19.0.4</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="ban-by-location">
+                                    <h5>Ban by location</h5>
+                                    <div><span>Location</span><span><input type="text"><button onclick="smallBloob(event)">Ban</button></span></div>
+                                    <div id="ban-by-location-management">
+                                        <div>
+                                            <div><span>India</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                            <div><span>China</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                            <div><span>Brazil</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                            <div><span>India</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                            <div><span>China</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                            <div><span>Brazil</span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div id="language">
                                 <h4>Geographic redirection</h4>
+                                <div id="geo-input">
+                                    <div><span>Location</span><input type="text"></div>
+                                    <div><span>Server</span><span class="selectbtn"><span>Choose a server</span><span class="material-symbols-outlined">expand_more</span></span></div>
+                                    <div><span>Path</span><input type="text"></div>
+                                    <span onclick="smallBloob(event)">Add</span>
+                                </div>
+                                <div id="geo-management">
+                                    <h5>Redirections management</h5>
+                                    <div id="geo-layout">
+                                        <div>
+                                            <div><span>French<span>fr.localhost<i>/maison</i></span></span><span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></span></div>
+                                            <div><span>Spain<span>es.localhost<i>/casa</i></span></span><span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></span></div>
+                                            <div><span>Poland<span>pl.localhost<i>/dom</i></span></span><span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></span></div>
+                                            <div><span>French<span>fr.localhost<i>/maison</i></span></span><span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></span></div>
+                                            <div><span>Spain<span>es.localhost<i>/casa</i></span></span><span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></span></div>
+                                            <div><span>Poland<span>pl.localhost<i>/dom</i></span></span><span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></span></div>
+                                            <div><span>French<span>fr.localhost<i>/maison</i></span></span><span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></span></div>
+                                            <div><span>Spain<span>es.localhost<i>/casa</i></span></span><span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></span></div>
+                                            <div><span>Poland<span>pl.localhost<i>/dom</i></span></span><span><span class="material-symbols-outlined">edit</span><span class="material-symbols-outlined">delete</span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="uri">
+                                <h4>URI modification</h4>
+                            </div>
+                            <div id="cache">
+                                <h4>Cache management</h4>
+                            </div>
+                            <div id="cookies">
+                                <h4>Cookies management</h4>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
+                </section>
+                <section>
                     <h3>Docker</h3>
                     <span class="select">Choose environement <span class="material-symbols-outlined">expand_more</span></span>
-                </div>
+                </section>
+                <section>
+                    <h3>Analytics</h3>
+                </section>
             </div>
         </main>
     </div>
