@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 
 body { margin: 0px; background: rgb(250, 250, 250); font-family: 'Zen Dots', cursive; }
+input, button {
+    font-family: 'Zen Dots', cursive;
+}
 *::selection {
     background: #11a02b;
     color: rgb(250, 250, 250);
@@ -50,17 +53,17 @@ body { margin: 0px; background: rgb(250, 250, 250); font-family: 'Zen Dots', cur
     user-select: none;
 }
 
-#layout main nav {
+#layout main > nav {
     position: relative;
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
     height: 50px;
 }
-#layout main nav h2 {
+#layout main > nav h2 {
     position: absolute;
 }
-#layout main nav div {
+#layout main > nav div {
     position: absolute;
     display: flex;
     align-items: center;
@@ -71,16 +74,28 @@ body { margin: 0px; background: rgb(250, 250, 250); font-family: 'Zen Dots', cur
     width: calc(100% - 200px);
     height: 65px;
 }
-#layout main nav div::-webkit-scrollbar, #middlewares::-webkit-scrollbar {
+body::-webkit-scrollbar {
+    width: 18px;
+}
+body::-webkit-scrollbar-thumb {
+    background: #dfdfdf;
+    border-radius: 7px;
+    border: 4px solid rgb(250, 250, 250);
+}
+#layout main > nav div::-webkit-scrollbar, #middlewares::-webkit-scrollbar {
     height: 8px;
 }
-#layout main nav div::-webkit-scrollbar-thumb, #middlewares::-webkit-scrollbar-thumb {
+#user-management > div > div::-webkit-scrollbar, #ban-by-ip-management > div::-webkit-scrollbar, #ban-by-location-management > div::-webkit-scrollbar, #geo-layout > div::-webkit-scrollbar {
+    width: 8px;
+}
+#layout main > nav div::-webkit-scrollbar-thumb, #middlewares::-webkit-scrollbar-thumb, #user-management > div > div::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb, #ban-by-ip-management > div::-webkit-scrollbar-thumb, #ban-by-location-management > div::-webkit-scrollbar-thumb, #geo-layout > div::-webkit-scrollbar-thumb {
     background: #dfdfdf;
     border-radius: 7px;
 }
 #layout main nav span {
     margin-left: 30px;
     cursor: pointer;
+    user-select: none;
 }
 #layout main nav span:first-child {
     margin-left: 0px;
@@ -99,10 +114,11 @@ body { margin: 0px; background: rgb(250, 250, 250); font-family: 'Zen Dots', cur
     border-radius: 7px;
 }
 
-main > div {
+#main-layout {
     padding: 20px;
+    padding-right: 0px;
 }
-main > div > div {
+#main-layout section {
     margin-bottom: 40px;
 }
 
@@ -116,6 +132,7 @@ main h3 {
     border-radius: 10px;
     position: relative;
     cursor: pointer;
+    user-select: none;
 }
 .select span {
     position: absolute;
@@ -132,13 +149,14 @@ main h3 {
     gap: 200px;
     position: relative;
 }
-#middlewares > div {
+#middlewares-layout {
     position: absolute;
     display: flex;
     margin-top: 30px;
     gap: 40px;
+    padding-right: 35px;
 }
-#middlewares > div > div {
+#middlewares-layout > div {
     position: relative;
     width: 375px;
     border: 2px solid #dfdfdf;
@@ -146,7 +164,7 @@ main h3 {
     height: 530px;
     padding: 30px;
 }
-#middlewares > div > div::before {
+#middlewares-layout > div::before {
     position: absolute;
     color: rgb(250, 250, 250);
     border-radius: 13px;
@@ -173,28 +191,28 @@ main h3 {
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: 'liga';
 }
-#middlewares > div > div h4 {
+#middlewares-layout > div h4 {
     margin-top: 5px;
     margin-bottom: 20px;
     font-size: 24px;
 }
-#middlewares > div > div > #auto-generated {
+#auto-generated {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
     justify-content: flex-end;
 }
-#middlewares > div > div > #auto-generated > span {
+#auto-generated > span {
     margin-left: 30px;
 }
 #middlewares h5, #authentication h5 {
     font-size: 18px;
     margin-bottom: 25px;
 }
-#middlewares > div > div > #redirection p {
+#redirection p {
     font-size: 13px;
 }
-#middlewares > div > div > #file-input > div > div {
+#file-input > div > div {
     width: calc(100% - 10px);
     height: 90px;
     border: 2px solid #11a02b;
@@ -202,7 +220,7 @@ main h3 {
     margin-bottom: 20px;
     position: relative;
 }
-#middlewares > div > div > #file-input > div > div > div {
+#file-input > div > div > div {
     position: absolute;
     opacity: 0.6;
     display: flex;
@@ -212,11 +230,11 @@ main h3 {
     width: 100%;
     height: 100%;
 }
-#middlewares > div > div > #file-input > div > div > div > div {
+#file-input > div > div > div > div {
     font-size: 10px;
     margin-top: 5px;
 }
-#middlewares > div > div > #file-input input {
+#file-input input {
     opacity: 0;
     width: 100%;
     height: 100%;
@@ -234,22 +252,263 @@ main h3 {
 #authentication #authentication-on > span {
     width: calc(100% - 130px);
 }
+#user-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+#user-input > span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+#user-input input {
+    width: 220px;
+    border: 2px solid #11a02b;
+    background: rgb(250, 250, 250);
+    border-radius: 10px;
+    padding: 5px;
+}
+#user-input button {
+    width: 135px;
+    background: #11a02b;
+    color: rgb(250, 250, 250);
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+#user-input h5 {
+    align-self: flex-start;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+#user-management > div {
+    position: relative;
+}
+#user-management > div > div {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    overflow: auto;
+}
+#user-management > div > div > div {
+    display: flex;
+    height: 30px;
+    align-items: center;
+}
+#user-management > div > div > div span:first-child {
+    width: 275px;
+}
+#user-management > div > div > div span:first-child span {
+    margin-left: 15px;
+    background: #dfdfdf;
+    padding: 6px;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 6px;
+}
+#user-management > div > div > div span:not(:first-child) {
+    width: 40px;
+}
+#user-management > div > div > div span:nth-child(2) {
+    color: rgb(101, 184, 229);
+    cursor: pointer;
+    user-select: none;
+}
+#user-management > div > div > div span:nth-child(3) {
+    color: rgb(229, 101, 101);
+    cursor: pointer;
+    user-select: none;
+}
+#ban-by-ip h5, #ban-by-location h5 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+#ban-by-ip h5 {
+    margin-top: 20px;
+}
+#ban-by-ip > div, #ban-by-location > div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+#ban-by-ip button, #ban-by-location button {
+    background: rgb(229, 101, 101);
+    color: rgb(250, 250, 250);
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+}
+#ban-by-ip input, #ban-by-location input {
+    width: 175px;
+    border: 2px solid #11a02b;
+    background: rgb(250, 250, 250);
+    border-radius: 10px;
+    padding: 5px;
+}
+#ban-by-ip-management, #ban-by-location-management {
+    position: relative;
+    width: 100%;
+    height: 115px;
+}
+#ban-by-ip-management > div, #ban-by-location-management > div {
+    margin-top: 30px;
+    position: absolute;
+    width: 100%;
+    height: 115px;
+    overflow: auto;
+}
+#ban-by-ip-management > div > div, #ban-by-location-management > div > div {
+    display: flex;
+    height: 30px;
+    align-items: center;
+}
+#ban-by-ip-management > div > div span:first-child, #ban-by-location-management > div > div span:first-child {
+    width: 275px;
+}
+#ban-by-ip-management > div > div span:first-child span, #ban-by-location-management > div > div span:first-child span {
+    margin-left: 15px;
+    background: #dfdfdf;
+    padding: 6px;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 6px;
+}
+#ban-by-ip-management > div > div span:not(:first-child), #ban-by-location-management > div > div span:not(:first-child) {
+    width: 40px;
+}
+#ban-by-ip-management > div > div span:nth-child(2), #ban-by-location-management > div > div span:nth-child(2), #geo-layout > div > div span:last-child span:nth-child(1) {
+    color: rgb(101, 184, 229);
+    cursor: pointer;
+    user-select: none;
+}
+#ban-by-ip-management > div > div span:nth-child(3), #ban-by-location-management > div > div span:nth-child(3), #geo-layout > div > div span:last-child span:nth-child(2) {
+    color: rgb(229, 101, 101);
+    cursor: pointer;
+    user-select: none;
+}
+#geo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#geo-input div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#geo-input .selectbtn {
+    font-size: 10px;
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    border: 2px solid #11a02b;
+    border-radius: 10px;
+    padding: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    user-select: none;
+}
+#geo-input .selectbtn span:first-child {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+#geo-input input {
+    width: 220px;
+    border: 2px solid #11a02b;
+    background: rgb(250, 250, 250);
+    border-radius: 10px;
+    padding: 5px;
+}
+#geo-input > span {
+    position: relative;
+    left: calc(50% - 80px);
+    width: 160px;
+    background: #11a02b;
+    color: rgb(250, 250, 250);
+    text-align: center;
+    padding: 7px;
+    border-radius: 7px;
+    top: 10px;
+}
+#geo-management {
+    margin-top: 30px;
+}
+#geo-management h5 {
+    margin-top: 45px;
+    margin-bottom: -5px;
+}
+#geo-layout {
+    position: relative;
+    margin-top: 30px;
+}
+#geo-layout > div {
+    position: absolute;
+    width: 100%;
+    height: 240px;
+    overflow: auto;
+}
+#geo-layout > div > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    height: 35px;
+}
+#geo-layout > div > div span:first-child > span {
+    font-size: 12px;
+    margin-left: 10px;
+    background: #dfdfdf;
+    padding: 5px;
+    border-radius: 7px;
+}
+#geo-layout > div > div span:last-child span:nth-child(1) {
+    margin-right: 15px;
+}
+a {
+    color:#11a02b;
+    cursor: pointer;
+}
 
 #ssl::before {
-    background: rgb(101, 229, 120);
+    background: #11a02b;
     content: "lock";
 }
 #authentication::before {
-    background: rgb(101, 184, 229);
+    background: #11a02b;
     content: "verified_user";
 }
 #access::before {
-    background: rgb(229, 199, 101);
+    background: #11a02b;
     content: "public";
 }
 #language::before {
-    background: rgb(195, 101, 229);
+    background: #11a02b;
     content: "language";
+}
+#uri::before {
+    background: #11a02b;
+    content: "link";
+}
+#cache::before {
+    background: #11a02b;
+    content: "save";
+}
+#cookies::before {
+    background: #11a02b;
+    content: "cookie";
 }
 
 #nginx {
@@ -266,12 +525,30 @@ main h3 {
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation-fill-mode: forwards;
 }
+.smallBloob {
+    animation-name: smallBloob;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-fill-mode: forwards;
+}
 @keyframes bloob {
     from {
         transform: scale(1);
     }
     60% {
         transform: scale(1.2);
+    } 
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes smallBloob {
+    from {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
     } 
     to {
         transform: scale(1);
@@ -292,6 +569,7 @@ main h3 {
 .slider {
     position: absolute;
     cursor: pointer;
+    user-select: none;
     top: 0;
     left: 0;
     right: 0;
