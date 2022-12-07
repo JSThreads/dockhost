@@ -7,7 +7,7 @@ CLI
 
 - [x] Routing 
 - [ ] Middlewares
-  - [x] Loadbalancing
+  - [x] Load balancing
   - [x] Redirection
   - [x] Ban IP
   - [x] Authentication
@@ -23,3 +23,7 @@ CLI
 Configure all the staff from a mmodern, easy and accessible dashboard!
 
 ![image](https://user-images.githubusercontent.com/73474137/205767504-919d513a-bfc9-46f9-ae14-f273f8b19c37.png)
+
+### Nginx 
+
+- [x] Load balancing
