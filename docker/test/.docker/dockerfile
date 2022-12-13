@@ -1,0 +1,22 @@
+FROM ubuntu
+
+# install nginx
+RUN apt-get update && apt-get install -y nginx
+RUN rm -rf /etc/nginx/sites-enabled/default
+
+# install express js
+RUN apt install -y nodejs npm
+RUN npm install --prefix /etc/server express --save
+RUN npm install pm2 -g
+
+# install curl [FOR TESTS]
+RUN apt install -y curl 
+
+# copy config
+COPY ./nginx.conf /etc/nginx/nginx.conf
+
+# copy express folder
+COPY ./server.js /etc/server/server.js
+
+ENTRYPOINT ["pm2", "start", "/etc/server/server.js"]
+CMD ["nginx", "-g", "daemon off;"]
