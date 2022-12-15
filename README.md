@@ -1,29 +1,17 @@
-# dockhost
-VirtualHost powered by Docker
+# Dockhost 
 
-Translate Traefik to Nginx proxy and write plugins
+A API and dashboard for Docker and Kubernetes. You can use our dashboard and a CLI tool for servers.
 
-CLI 
+```
+⚠ BE CAREFUL, FUNCTIONNALITIES CAN CHANGES BETWEEN ENVIRONMENTS ⚠
+```
 
-- [x] Routing 
-- [ ] Middlewares
-  - [x] Load balancing
-  - [x] Redirection
-  - [x] Ban IP
-  - [x] Authentication
-  - [x] Path modification
-  - [ ] GeoBan
-  - [ ] Cache
-  - [ ] Cookies
-- [ ] HTTPS
-  - [ ] Redirection
+## To-do 
 
-### Dashboard
+Here you can be on time with the modifications made in this project:
 
-Configure all the staff from a mmodern, easy and accessible dashboard!
-
-![image](https://user-images.githubusercontent.com/73474137/205767504-919d513a-bfc9-46f9-ae14-f273f8b19c37.png)
-
-### Nginx 
-
-- [x] Load balancing
+- [ ] Dashboad
+- [ ] API
+- [ ] CLI 
+- [ ] Docker
+- [ ] Kubernetes
