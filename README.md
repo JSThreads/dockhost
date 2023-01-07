@@ -1,6 +1,6 @@
 # Dockhost 
 
-![dockhost](https://user-images.githubusercontent.com/73474137/208237002-6f52b598-29dc-4676-a918-1cf5e6a9d14d.png)
+![dockhost](https://user-images.githubusercontent.com/73474137/211152918-70def408-6e0d-4ecc-bd18-85d016ca1497.svg)
 
 <p align=center><i><b>Dockhost</b> ~ Configuration tool for Docker and Kubernetes manageable with an API and Dashboard</i></p>
 
