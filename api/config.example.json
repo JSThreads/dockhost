@@ -1,0 +1,29 @@
+{
+    "port": 10000,
+    "users": [ "admin:HASHEDSHA256PASSWORD", "user1:HASHEDSHA256PASSWORD" ],
+
+    "servers": {
+        "Name-which-you-want": {
+            "image": "image-you-want-to-use",
+            "ports": [ 80, 443 ],
+            "ssh": true,
+            "ftp": true
+        }
+    },
+    "groups": {
+        "Name-which-you-want": [ "Name-of-the-server" ]
+    },
+
+    "doamins": {
+        "localhost": {
+            "/": {
+                "group": "Name-of-the-group",
+                "modules": {
+                    "Name-of-the-module": {
+                        "option": "..."
+                    }
+                }
+            }
+        }
+    }
+}
