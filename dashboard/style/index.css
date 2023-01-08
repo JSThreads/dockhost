@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    color: #fff;
+}
+::selection {
+    background: #fff;
+    color: #4c96ed;
+}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #6CACEA; }
+::-webkit-scrollbar-thumb { background: #4c96ed; }
+
+#nginx {
+    position: absolute;
+    font-weight: 700;
+    color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    z-index: 4;
+}
+
+#layout {
+    display: grid;
+    grid-template-rows: 270px 1fr;
+    position: absolute;
+    min-width: calc(100vw - 10px);
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+}
+#layout > nav {
+    display: flex;
+    justify-content: center;
+    background: #6CACEA;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+#layout > nav img {
+    height: calc(100% + 50px);
+}
+@media screen and (max-width: 1330px) { #layout > nav img { content: url("../assets/dockhostbanner-md.svg"); } }
+@media screen and (max-width: 900px) { #layout > nav img { content: url("../assets/dockhostbanner-sm.svg"); } }
+@media screen and (max-width: 600px) { #layout > nav img { content: url("../assets/dockhostbanner-xsm.svg"); } }
+@media screen and (max-width: 375px) { #layout > nav img { content: url("../assets/dockhostbanner-mobile.svg"); } }
+
+#layout > nav div {
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background: url("../assets/waves.svg");
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+#layout > main {
+    width: 100%;
+    height: 100%;
+    background: #4c96ed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 600px;
+}
+#seabackground {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 350px;
+    background: url("../assets/seabackground.svg");
+    background-position-x: -40px;
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+#content {
+    width: calc(100% - 120px);
+    height: calc(100% - 100px);
+    max-width: 1500px;
+    z-index: 2;
+    margin-top: 40px;
+    background: #4c96ed;
+    border-radius: 30px;
+    display: flex;
+}
+@media screen and (max-width: 900px) { #content { width: calc(100% - 80px); } }
+@media screen and (max-width: 600px) { #content { width: calc(100% - 40px); } }
+@media screen and (max-width: 375px) { #content { width: calc(100% - 20px); } }
+
+#content > div {
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+}
+
+.manage-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 5px;
+    height: 30px;
+}
+.manage-nav > span {
+    font-size: 20px;
+    font-weight: 500;
+}
+.manage-nav > div {
+    overflow-x: scroll;
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+.manage-nav > div::-webkit-scrollbar { height: 10px; }
+.manage-nav > div::-webkit-scrollbar-track { background: #4c96ed; }
+.manage-nav > div::-webkit-scrollbar-thumb { background: #fff; border-radius: 10px; border: 2px solid #4c96ed; }
+
+.manage-nav button {
+    padding-left: 7px;
+    padding-right: 7px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+button.add {
+    font-weight: 800;
+    background: #fff;
+    color: #4c96ed;
+}
+button.active {
+    background: #6CACEA !important;
+}
+.manage-content {
+    margin-top: 10px;
+}
