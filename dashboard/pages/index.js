@@ -27,7 +27,7 @@ export default function Home() {
                 <h1>Login to your dashboard</h1>
                 
                 <div><span>Username</span><input type="text" /></div>
-                <div><span>Password</span><input id="password-input" type='password' /><button onClick={changePasswordState}><span class="material-symbols-outlined">visibility_off</span></button></div>
+                <div><span>Password</span><div><input id="password-input" type='password' /><button onClick={changePasswordState}><span class="material-symbols-outlined">visibility_off</span></button></div></div>
 
                 <div><span>Remember this user on this device <i>(optional)</i></span><input type="checkbox" /></div>
 

@@ -47,6 +47,7 @@
     color: #4c96ed;
 }
 #login-box div:not(:nth-child(4)) {
+    display: flex;
     margin-bottom: 10px;
 }
 #login-box div:not(:nth-child(4)) > span {
@@ -70,12 +71,31 @@
 #login-box input[type=checkbox]:checked {
     accent-color: #fff;
 }
+@media screen and (max-width: 499px) {
+    #login-box {
+        width: calc(100% - 40px);
+        margin: 20px;
+        transform: translateY(-35px);
+    }
+    #login-box > div:not(:nth-child(4)) {
+        flex-direction: column;
+    }
+    #login-box > div:nth-child(3) input {
+        width: calc(100% - 30px) ;
+    }
+    #login-box::after {
+        font-size: 12px;
+    }
+    #login-box h1 {
+        font-size: 28px;
+    }
+}
 
 #baleine {
     position: absolute;
     width: 200px;
     top: 80px;
-    transform: translateX(100%);
+    transform: translateX(100%) scale(1); 
     right: 0px;
     opacity: 0.4;
     animation: baleineMove 60s 2s linear infinite;
@@ -84,10 +104,12 @@
     0% {
         right: 0px;
         top: 80px;
+        transform: translateX(100%) scale(1); 
     }
     100% {
         right: calc(100% + 250px);
         top: 110px;
+        transform: translateX(100%) scale(1.02);
     }
 }
 
@@ -95,8 +117,8 @@
     position: absolute;
     width: 200px;
     bottom: 120px;
-    transform: scaleX(-1) translateX(100%);
     left: 0px;
+    transform: scaleX(-1) translateX(100%) scale(0.8);
     opacity: 0.4;
     animation: fishes1Move 50s 3s linear infinite;
 }
@@ -104,10 +126,12 @@
     0% {
         left: 0px;
         bottom: 120px;
+        transform: scaleX(-1) translateX(100%) scale(0.8);
     }
     100% {
         left: calc(100% + 250px);
         bottom: 145px;
+        transform: scaleX(-1) translateX(100%) scale(1);
     }
 }
 
@@ -117,16 +141,34 @@
     top: 250px;
     transform: scaleX(-1) translateX(-100%);
     right: 0px;
-    opacity: 0.4;
+    opacity: 0.225;
     animation: fishes2Move 45s 1s linear infinite;
 }
 @keyframes fishes2Move {
     0% {
         right: 0px;
         top: 250px;
+        transform: scaleX(-1) translateX(-100%) scale(1);
     }
     100% {
         right: calc(100% + 300px);
         bottom: 275px;
+        transform: scaleX(-1) translateX(-100%) scale(1.05);
     }
+}
+
+@media screen and (max-width: 1024px) {
+    #baleine { animation: baleineMove 43s 2s linear infinite; }
+    #fishes1 { animation: fishes1Move 35s 3s linear infinite; }
+    #fishes2 { animation: fishes2Move 32s 3s linear infinite; }
+}
+@media screen and (max-width: 800px) {
+    #baleine { animation: baleineMove 36s 2s linear infinite; }
+    #fishes1 { animation: fishes1Move 27s 3s linear infinite; }
+    #fishes2 { animation: fishes2Move 25s 3s linear infinite; }
+}
+@media screen and (max-width: 425px) {
+    #baleine { animation: baleineMove 18s 2s linear infinite; }
+    #fishes1 { animation: fishes1Move 15s 3s linear infinite; }
+    #fishes2 { animation: fishes2Move 13s 3s linear infinite; }
 }

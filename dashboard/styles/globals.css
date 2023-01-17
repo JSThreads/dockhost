@@ -72,9 +72,9 @@
 
 #layout > nav div {
     height: 15px;
-    width: 200%;
+    width: calc(200% + 241px);
     position: absolute;
-    left: -100%;
+    left: -241px;
     bottom: 0px;
     background: url("/assets/waves.svg");
     background-repeat: repeat-x;
@@ -83,10 +83,10 @@
 }
 @keyframes waveMove {
     0% {
-        left: -100%;
+        left: -241px;
     }
     100% {
-        left: calc(-100% + 241px);
+        left: 0px;
     }
 }
 
