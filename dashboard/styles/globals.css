@@ -95,9 +95,10 @@
     background: #4c96ed;
     position: relative;
     height: 100%;
-    min-height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
