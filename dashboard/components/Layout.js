@@ -13,7 +13,7 @@ export default function Layout(props) {
                     min-height: 100%;
 
                     display: grid;
-                    grid-template-rows: 200px 1fr;
+                    grid-template-rows: 170px 1fr 60px;
                 }
             `}</style>
         </>
