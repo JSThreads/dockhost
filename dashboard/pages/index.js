@@ -1,13 +1,14 @@
 import Layout from '../components/Layout'
 import MainNav from '../components/MainNav'
 import Footer from '../components/Footer'
+import LoginContent from '../components/LoginContent'
 
 export default function Home() {
     return (
         <>
             <Layout>
                 <MainNav />
-                <div style={{'width': '100%', 'background': '#4C96ED'}}>dfs</div>
+                <LoginContent />
                 <Footer />
             </Layout>
         </>
