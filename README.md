@@ -16,3 +16,9 @@ Here you can be on time with the modifications made in this project:
 - [ ] API
 - [ ] Docker
 - [ ] Kubernetes
+
+## Tested OS
+
+Ubuntu: ❌
+
+Ubuntu server: ✅
